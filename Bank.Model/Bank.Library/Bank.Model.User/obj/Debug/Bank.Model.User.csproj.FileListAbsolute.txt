@@ -1,0 +1,6 @@
+C:\Users\Decagon Laptop\OneDrive\Documents\Codes\Decagon\week-3-CalebTek\Bank.Model\Bank.Library\Bank.Model.User\bin\Debug\Bank.Model.User.dll
+C:\Users\Decagon Laptop\OneDrive\Documents\Codes\Decagon\week-3-CalebTek\Bank.Model\Bank.Library\Bank.Model.User\bin\Debug\Bank.Model.User.pdb
+C:\Users\Decagon Laptop\OneDrive\Documents\Codes\Decagon\week-3-CalebTek\Bank.Model\Bank.Library\Bank.Model.User\obj\Debug\Bank.Model.User.csproj.AssemblyReference.cache
+C:\Users\Decagon Laptop\OneDrive\Documents\Codes\Decagon\week-3-CalebTek\Bank.Model\Bank.Library\Bank.Model.User\obj\Debug\Bank.Model.User.csproj.CoreCompileInputs.cache
+C:\Users\Decagon Laptop\OneDrive\Documents\Codes\Decagon\week-3-CalebTek\Bank.Model\Bank.Library\Bank.Model.User\obj\Debug\Bank.Model.User.dll
+C:\Users\Decagon Laptop\OneDrive\Documents\Codes\Decagon\week-3-CalebTek\Bank.Model\Bank.Library\Bank.Model.User\obj\Debug\Bank.Model.User.pdb
