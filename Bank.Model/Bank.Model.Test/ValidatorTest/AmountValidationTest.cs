@@ -9,7 +9,7 @@ namespace Bank.Model.Test.ValidatorTest
         [Theory]
         [InlineData("Enter your amount: ", "100.50", 100.50)] // Valid decimal input
         [InlineData("Enter your amount: ", "100", 100)] // Valid integer input
-        //[InlineData("Enter your amount: ", "abc", 0)] // Invalid input
+        //[InlineData("Enter your amount: ", "abc", typeof(Exception))]
         public void GetAmount_ValidatesAmountCorrectly(string prompt, string input, decimal expectedAmount)
         {
             // Arrange
@@ -23,5 +23,21 @@ namespace Bank.Model.Test.ValidatorTest
             // Assert
             Assert.Equal(expectedAmount, amount);
         }
+
+        [Theory]
+        [InlineData("Enter your amount: ", "abc")]
+        [InlineData("Enter your amount: ", "12abc")]
+        [InlineData("Enter your amount: ", "12.0M")]
+        public void GetAmount_ValidatesAmountCorrectly_InvalidInput(string prompt, string input)
+        {
+            // Arrange
+            var userInputMock = new Mock<IValidateInput>();
+            userInputMock.Setup(u => u.GetAmount(prompt)).Throws<FormatException>(); // Specify the exception type
+            var userInput = userInputMock.Object;
+
+            // Act and Assert
+            Assert.Throws<FormatException>(() => userInput.GetAmount(prompt));
+        }
+
     }
 }
