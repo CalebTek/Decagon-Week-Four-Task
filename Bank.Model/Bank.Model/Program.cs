@@ -1,5 +1,9 @@
-﻿using Bank.Model.User;
-using System;
+﻿using System;
+using Bank.Model.Common.Implementations;
+using Bank.Model.Common.Models;
+using Bank.Model.Common.Interfaces;
+using System.Security.Authentication.ExtendedProtection;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Bank.Model
 {
@@ -8,34 +12,23 @@ namespace Bank.Model
     {
         public static void Main()
         {
-            DisplayUI.AppMenu();
-            Bank bank = new Bank();
 
-            int choice;
-            do
-            {
-                DisplayUI.DiplayMenu();
+           var services = new ServiceCollection();
+           ConfigureServices(services);
+            services
+                .AddScoped<IBank, Banks>()
+                .BuildServiceProvider()
+                .GetService<Banks>()
+                .Start();
+                
+        }
 
-                choice = ConsoleUserInput.GetChoice(3);
-
-                switch (choice)
-                {
-                    case 1:
-                        bank.CreateAccount();
-                        break;
-                    case 2:
-                        bank.Login();
-                        break;
-                    case 3:
-                        DisplayUI.ExitMessage();
-                        break;
-                    default:
-                        Console.WriteLine("Invalid choice. Please try again.");
-                        break;
-                }
-
-                Console.WriteLine();
-            } while (choice != 3);
+        public static void ConfigureServices(IServiceCollection services)
+        {
+            services.AddScoped<IPrinter, Printer>();
+            services.AddScoped<IValidateInput, ConsoleUserInput>();
+            services.AddScoped<IDisplayUI, DisplayUI>();
+            services.AddScoped<IAccount, Account>();
         }
 
     }
