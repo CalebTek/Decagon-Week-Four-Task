@@ -16,19 +16,20 @@ namespace Bank.Model
            var services = new ServiceCollection();
            ConfigureServices(services);
             services
-                .AddScoped<IBank, Banks>()
+                .AddSingleton<Banks, Banks>()
                 .BuildServiceProvider()
                 .GetService<Banks>()
                 .Start();
-                
+
+            //.AddTransient<IDisplayUI, DisplayUI>()
         }
 
-        public static void ConfigureServices(IServiceCollection services)
+        public static void ConfigureServices(ServiceCollection services)
         {
-            services.AddScoped<IPrinter, Printer>();
-            services.AddScoped<IValidateInput, ConsoleUserInput>();
-            services.AddScoped<IDisplayUI, DisplayUI>();
-            services.AddScoped<IAccount, Account>();
+            services.AddTransient<IPrinter, Printer>();
+            services.AddTransient<IValidateInput, ConsoleUserInput>();
+            services.AddTransient<IDisplayUI, DisplayUI>();
+            services.AddTransient<IAccount, Account>();
         }
 
     }

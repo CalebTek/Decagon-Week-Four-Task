@@ -30,6 +30,7 @@ namespace Bank.Model.Test.ValidatorTest
         [Theory]
         [InlineData(5,3, "abc")]
         [InlineData(9, 4, "10.89")]
+        [InlineData(3, 1, "!")]
         public void GetChoice_InvalidInputThenValidInput_ReturnsValidChoice(int max, int expected ,string Input)
         {
             // Arrange

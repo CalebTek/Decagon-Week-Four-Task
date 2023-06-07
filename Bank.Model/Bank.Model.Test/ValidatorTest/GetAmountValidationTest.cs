@@ -4,12 +4,12 @@ using Bank.Model.Common.Interfaces;
 
 namespace Bank.Model.Test.ValidatorTest
 {
-    public class AmountValidationTests
+    public class GetAmountValidationTests
     {
         [Theory]
         [InlineData("Enter your amount: ", "100.50", 100.50)] // Valid decimal input
         [InlineData("Enter your amount: ", "100", 100)] // Valid integer input
-        //[InlineData("Enter your amount: ", "abc", typeof(Exception))]
+        [InlineData("Enter your amount: ", "0", 0)] // Valid integer input
         public void GetAmount_ValidatesAmountCorrectly(string prompt, string input, decimal expectedAmount)
         {
             // Arrange

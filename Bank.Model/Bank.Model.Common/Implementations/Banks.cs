@@ -25,6 +25,7 @@ namespace Bank.Model.Common.Implementations
             _Validate = validateInput;
             _account = account;
             _UI = displayUI;
+            _bank = bank;
 
         }
 

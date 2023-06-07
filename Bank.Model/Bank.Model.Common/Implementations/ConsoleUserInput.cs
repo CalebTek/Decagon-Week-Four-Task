@@ -156,7 +156,7 @@ namespace Bank.Model.Common.Implementations
                 if (!decimal.TryParse(input, out number))
                 {
                     Console.WriteLine("Invalid input.\nPlease enter a valid decimal number.");
-                }
+                } 
                 else
                 {
                     isValidNumber = true;

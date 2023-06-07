@@ -18,7 +18,7 @@ namespace Bank.Model.Test.ValidatorTest
             Console.SetIn(reader);
 
             // Act
-            var userInput = new ConsoleUserInput(); // Assuming ConsoleUserInput implements IValidateInput
+            var userInput = new ConsoleUserInput(); //  ConsoleUserInput implements IValidateInput
             string actualAccountNumber = userInput.GetAccountNumber();
 
             // Assert
@@ -35,7 +35,7 @@ namespace Bank.Model.Test.ValidatorTest
             Console.SetIn(reader);
 
             // Act
-            var userInput = new ConsoleUserInput(); // Assuming ConsoleUserInput implements IValidateInput
+            var userInput = new ConsoleUserInput(); //  ConsoleUserInput implements IValidateInput
             string actualAccountNumber = userInput.GetAccountNumber();
 
             // Assert

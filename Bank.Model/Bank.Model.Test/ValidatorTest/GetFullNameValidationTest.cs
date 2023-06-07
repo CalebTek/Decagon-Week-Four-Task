@@ -3,12 +3,15 @@ using Xunit;
 
 namespace Bank.Model.Test.ValidatorTest
 {
-    public class FullNameValidationTests
+    public class GetFullNameValidationTests
     {
         [Theory]
-        [InlineData("John Doe", true)] // Valid full name with two words
+        [InlineData("John Wesley", true)] // Valid full name with two words
+        [InlineData("John   Wesley", true)] // Valid full name with two words and more than one space 
+        [InlineData(" John   Wesley ", true)] // Valid full name with two words and more than one space at the start and end 
         [InlineData("John", false)] // Invalid full name with one word
         [InlineData("", false)] // Empty full name
+        [InlineData("JohnWesley", false)] // Invalid full name with one word
         public void GetFullName_ValidatesFullNameCorrectly(string fullName, bool expectedResult)
         {
             // Arrange
